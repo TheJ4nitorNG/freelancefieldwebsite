@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Certified Notaries - Freelance Field</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Freelance Field</a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"></button>
+            <button id="hamburger-btn" class="hamburger-btn">☰</button>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="developers.html" class="nav-link">Developers</a>
+            <a href="lawyers.html" class="nav-link">Lawyers</a>
+            <a href="notaries.html" class="nav-link">Notary Public</a>
+            <a href="faq.html" class="nav-link">FAQ / Information</a>
+            <a href="join.html" class="btn-primary">Become a Freelancer</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hire Certified Notaries</h1>
+        <p>Find mobile and remote online notaries public available 24/7 to legally verify your documents.</p>
+    </header>
+
+    <main class="grid-section" id="expertGrid">
+        <div class="card" data-category="notary">
+            <div class="card-header">
+                <h2 class="card-name">Elena Torres</h2>
+                <span class="tag green">Notary Public</span>
+            </div>
+            <p class="card-bio">Mobile and remote online notary available 24/7.</p>
+            <div class="card-footer">
+                <span class="rate">$40/doc</span>
+                <button class="action-btn">Hire Elena</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Freelance Field. All rights reserved.</p>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+</html>

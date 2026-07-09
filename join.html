@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Freelancer - Freelance Field</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Freelance Field</a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"></button>
+            <button id="hamburger-btn" class="hamburger-btn">☰</button>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="developers.html" class="nav-link">Developers</a>
+            <a href="lawyers.html" class="nav-link">Lawyers</a>
+            <a href="notaries.html" class="nav-link">Notary Public</a>
+            <a href="faq.html" class="nav-link">FAQ / Information</a>
+            <a href="join.html" class="btn-primary">Become a Freelancer</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <h2 id="form-title">Become a Freelancer</h2>
+        <form class="auth-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group" id="profession-group">
+                <label for="profession">Profession</label>
+                <select id="profession" required>
+                    <option value="" disabled selected>Select your expertise</option>
+                    <option value="developer">Developer</option>
+                    <option value="lawyer">Corporate Lawyer</option>
+                    <option value="notary">Notary Public</option>
+                </select>
+            </div>
+            <button type="submit" class="auth-submit" id="submit-btn">Create Account</button>
+            <div class="auth-toggle" id="toggle-text">
+                Already have an account? <a onclick="toggleForm('login')">Log in here</a>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Freelance Field. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleForm(type) {
+            const title = document.getElementById('form-title');
+            const submitBtn = document.getElementById('submit-btn');
+            const toggleText = document.getElementById('toggle-text');
+            const professionGroup = document.getElementById('profession-group');
+            const nameInput = document.getElementById('name');
+            
+            if(type === 'login') {
+                title.innerText = 'Log In to Your Account';
+                submitBtn.innerText = 'Log In';
+                toggleText.innerHTML = 'Don\'t have an account? <a onclick="toggleForm(\'signup\')">Sign up here</a>';
+                professionGroup.style.display = 'none';
+                document.getElementById('profession').removeAttribute('required');
+                nameInput.parentElement.style.display = 'none';
+                nameInput.removeAttribute('required');
+            } else {
+                title.innerText = 'Become a Freelancer';
+                submitBtn.innerText = 'Create Account';
+                toggleText.innerHTML = 'Already have an account? <a onclick="toggleForm(\'login\')">Log in here</a>';
+                professionGroup.style.display = 'block';
+                document.getElementById('profession').setAttribute('required', 'true');
+                nameInput.parentElement.style.display = 'block';
+                nameInput.setAttribute('required', 'true');
+            }
+        }
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

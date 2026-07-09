@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ & Information - Freelance Field</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Freelance Field</a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"></button>
+            <button id="hamburger-btn" class="hamburger-btn">☰</button>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="developers.html" class="nav-link">Developers</a>
+            <a href="lawyers.html" class="nav-link">Lawyers</a>
+            <a href="notaries.html" class="nav-link">Notary Public</a>
+            <a href="faq.html" class="nav-link">FAQ / Information</a>
+            <a href="join.html" class="btn-primary">Become a Freelancer</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Information & FAQ</h1>
+        <p>Everything you need to know about working with experts on Freelance Field.</p>
+    </header>
+
+    <div class="faq-container">
+        <details>
+            <summary>How do I hire an expert?</summary>
+            <div class="faq-answer">
+                Simply browse our categories or the main directory, find the expert whose skills match your project needs, and click "Hire". You'll be prompted to message them directly to start scoping your project.
+            </div>
+        </details>
+        <details>
+            <summary>Are the freelancers vetted?</summary>
+            <div class="faq-answer">
+                Yes. Every professional on Freelance Field, from corporate lawyers to mobile developers, undergoes a strict verification process to ensure their credentials and previous work meet our high standards.
+            </div>
+        </details>
+        <details>
+            <summary>How do payments work?</summary>
+            <div class="faq-answer">
+                Payments are held safely in escrow until the project milestones are completed to your satisfaction. You can pay via credit card, ACH, or wire transfer.
+            </div>
+        </details>
+        <details>
+            <summary>Can I apply to be a freelancer?</summary>
+            <div class="faq-answer">
+                Absolutely. Click the "Join as Freelancer" button at the top right to create your account. Once your profile is reviewed and approved, you can start accepting clients.
+            </div>
+        </details>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Freelance Field. All rights reserved.</p>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+</html>

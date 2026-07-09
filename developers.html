@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Top Developers - Freelance Field</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Freelance Field</a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"></button>
+            <button id="hamburger-btn" class="hamburger-btn">☰</button>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="developers.html" class="nav-link">Developers</a>
+            <a href="lawyers.html" class="nav-link">Lawyers</a>
+            <a href="notaries.html" class="nav-link">Notary Public</a>
+            <a href="faq.html" class="nav-link">FAQ / Information</a>
+            <a href="join.html" class="btn-primary">Become a Freelancer</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hire Top Developers</h1>
+        <p>From frontend react experts to backend infrastructure engineers, find the technical talent you need to build your vision.</p>
+    </header>
+
+    <main class="grid-section" id="expertGrid">
+        <div class="card" data-category="developer">
+            <div class="card-header">
+                <h2 class="card-name">Sarah Jenkins</h2>
+                <span class="tag blue">Developer</span>
+            </div>
+            <p class="card-bio">Full-Stack React & Node.js Expert. 8+ years experience.</p>
+            <div class="card-footer">
+                <span class="rate">$85/hr</span>
+                <button class="action-btn">Hire Sarah</button>
+            </div>
+        </div>
+
+        <div class="card" data-category="developer">
+            <div class="card-header">
+                <h2 class="card-name">David Chen</h2>
+                <span class="tag blue">Mobile Dev</span>
+            </div>
+            <p class="card-bio">iOS and Android app developer using Flutter and React Native.</p>
+            <div class="card-footer">
+                <span class="rate">$75/hr</span>
+                <button class="action-btn">Hire David</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Freelance Field. All rights reserved.</p>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+</html>

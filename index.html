@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Field - Find the Perfect Expert</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Freelance Field</a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"></button>
+            <button id="hamburger-btn" class="hamburger-btn">☰</button>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="developers.html" class="nav-link">Developers</a>
+            <a href="lawyers.html" class="nav-link">Lawyers</a>
+            <a href="notaries.html" class="nav-link">Notary Public</a>
+            <a href="faq.html" class="nav-link">FAQ / Information</a>
+            <a href="join.html" class="btn-primary">Become a Freelancer</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Find the Perfect Expert for Your Project</h1>
+        <p>Connect with top-tier developers, experienced legal consultants, and certified notaries ready to help you succeed.</p>
+    </header>
+
+    <section class="filters">
+        <button class="filter-btn active" data-filter="all">All Experts</button>
+        <button class="filter-btn" data-filter="developer">Developers</button>
+        <button class="filter-btn" data-filter="lawyer">Lawyers</button>
+        <button class="filter-btn" data-filter="notary">Notary Public</button>
+    </section>
+
+    <main class="grid-section" id="expertGrid">
+        <!-- Card 1 -->
+        <div class="card" data-category="developer">
+            <div class="card-header">
+                <h2 class="card-name">Sarah Jenkins</h2>
+                <span class="tag blue">Developer</span>
+            </div>
+            <p class="card-bio">Full-Stack React & Node.js Expert. 8+ years experience.</p>
+            <div class="card-footer">
+                <span class="rate">$85/hr</span>
+                <button class="action-btn">Hire Sarah</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" data-category="lawyer">
+            <div class="card-header">
+                <h2 class="card-name">Marcus Reed, Esq.</h2>
+                <span class="tag yellow">Corporate Lawyer</span>
+            </div>
+            <p class="card-bio">Specializes in startup incorporation, IP law, and contract review.</p>
+            <div class="card-footer">
+                <span class="rate">$200/hr</span>
+                <button class="action-btn">Hire Marcus</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" data-category="notary">
+            <div class="card-header">
+                <h2 class="card-name">Elena Torres</h2>
+                <span class="tag green">Notary Public</span>
+            </div>
+            <p class="card-bio">Mobile and remote online notary available 24/7.</p>
+            <div class="card-footer">
+                <span class="rate">$40/doc</span>
+                <button class="action-btn">Hire Elena</button>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" data-category="developer">
+            <div class="card-header">
+                <h2 class="card-name">David Chen</h2>
+                <span class="tag blue">Mobile Dev</span>
+            </div>
+            <p class="card-bio">iOS and Android app developer using Flutter and React Native.</p>
+            <div class="card-footer">
+                <span class="rate">$75/hr</span>
+                <button class="action-btn">Hire David</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Freelance Field. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Get filter value
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Filter cards
+                    cards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || filterValue === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>
